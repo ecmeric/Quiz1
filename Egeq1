@@ -1,0 +1,30 @@
+import random
+harfle=["a","b","c","ç","d","e","f","g","ğ","h","ı","i","j","k","l","m","n","o","ö","p","r","s","ş","t","u","ü","v","y","z"]
+harfler_2=[]
+x=29
+y=28
+for i in range(0,x):
+    x -= 1
+    harfler_2.append(harfle[random.randint(0, y)])
+    for j in harfle:
+        if j in harfler_2:
+            y-=1
+            harfle.remove(j)
+print(harfler_2)
+sentence = input()
+harfle=["a","b","c","ç","d","e","f","g","ğ","h","ı","i","j","k","l","m","n","o","ö","p","r","s","ş","t","u","ü","v","y","z"]
+for k in sentence:
+    if not k == " ":
+        for l in range(29):
+            if k==harfle[l]:
+                print(harfler_2[l],end="")
+    else:
+        print(" ", end="")
+crypto=input()
+for a in crypto:
+    if not a== " ":
+        for b in range(29):
+            if a==harfler_2[b]:
+                print(harfle[b],end="")
+    else:
+        print(" ",end="")
